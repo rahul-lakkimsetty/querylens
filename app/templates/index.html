@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}QueryLens - AI Analytics Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center my-4">
+        <h1 class="display-5 fw-bold text-dark">QueryLens Dashboard</h1>
+        <p class="lead text-muted">Translate English inquiries into SQL and dynamic analytics charts instantly.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- AI Input Card -->
+    <div class="col-md-8">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">Ask your database</h5>
+            </div>
+            <div class="card-body">
+                <form id="query-form">
+                    <div class="mb-3">
+                        <textarea class="form-control" id="nl-query" rows="3" placeholder="e.g. What are the total sales by product category in 2025?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate Insights</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schema card -->
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="card-title mb-0">Database Schema</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text text-muted">Available tables and schemas will load here.</p>
+                <ul class="list-group list-group-flush" id="schema-list">
+                    <!-- Loaded dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Area -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow-sm d-none" id="results-card">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Analysis Results</h5>
+                <span class="badge bg-success" id="sql-badge">Generated SQL</span>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <pre><code id="generated-sql" class="text-secondary"></code></pre>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <h6>Data Table</h6>
+                        <div class="table-responsive" id="data-table-container">
+                            <!-- Table inserted dynamically -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <h6>Visualization</h6>
+                        <div id="chart-container">
+                            <!-- Plotly chart inserted dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

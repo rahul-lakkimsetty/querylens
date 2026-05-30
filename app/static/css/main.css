@@ -1,0 +1,12 @@
+/* Custom Simple Styling to complement Bootstrap */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#generated-sql {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+    display: block;
+    overflow-x: auto;
+}

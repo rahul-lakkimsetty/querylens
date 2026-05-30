@@ -1,0 +1,2 @@
+# Keep database folder tracked by Git.
+# Olist SQLite database (olist.db) will be placed in this folder.
