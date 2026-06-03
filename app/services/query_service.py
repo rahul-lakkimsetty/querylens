@@ -1,16 +1,18 @@
 """
-Query Orchestrator Service.
-Coordinates the translation, validation, database execution, and visualization of the query.
+Query Service Orchestrator.
+Manages the end-to-end translation pipeline defined in the PRD:
+1. Dynamic Schema retrieval.
+2. Prompt Formatting.
+3. LLM Translation (SQLCoder).
+4. Validation & Security Checks (SQLGlot).
+5. Query execution (read-only SQLite).
+6. Auto-Correction (retry pipeline on syntax/schema failure).
+7. Visualization generation (Plotly dynamic charts).
 """
 
-def process_natural_language_query(nl_query):
+def process_query(nl_query):
     """
-    Orchestrate the flow:
-    1. Validate inputs.
-    2. Convert NL to SQL using LLM module.
-    3. Validate generated SQL using Validation module (SQLGlot).
-    4. Run query using Database layer.
-    5. Generate charts using Visualization module (Plotly).
-    6. Return aggregated results.
+    Core orchestrator method implementing the PRD translation flow.
     """
-    pass
+    # Orchestration logic will be implemented here
+    return {}
